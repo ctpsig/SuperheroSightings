@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Organizations</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+        <style>
+            .bungeeBig {
+                font-family: 'Bungee Shade';font-size: 73px;
+                color: red;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a class="nav-link" href="index.html"><h1 class="bungeeBig">Superhero Sightings</h1></a>
+            <div>
+                <ul class="nav nav-tabs nav-fill justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="sightings.html">Sightings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="heroes.html">Heroes</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="organizations.html">Organizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                </ul>    
+            </div>  
+            <br />
+            <div class="row">
+                <div class="col-8">
+                    <h1>All Organizations</h1>
+                    <div id="all-organizations">
+
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="editOrganizationsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editOrganizationTitle"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="needs-validation">
+                                        <div class="form-group">
+                                            <label for="edit-organization-name">Organization Name:</label>
+                                            <input type="text" class="form-control" id="edit-organization-name" required>
+                                            <div class="invalid-feedback">
+                                                Please choose an Organization Name.
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-organization-description">Description:</label>
+                                            <textarea class="form-control" id="edit-organization-description" rows="5" required></textarea>
+                                            <div class="invalid-feedback">
+                                                Please enter an organization description.
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-location-select">Location:</label>
+                                            <select class="custom-select" id="edit-location-select">
+                                                <option selected>Location(Choose One)</option>
+                                            </select>
+                                            <div class="alert alert-info">If you do not see the location you are looking for, add it <a href="locations.html">here</a>.</div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-button">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h1>Add Organizations</h1>
+                    <form class="needs-validation">
+                        <div class="form-group">
+                            <label for="organization-name">Organization Name:</label>
+                            <input type="text" class="form-control" id="organization-name" placeholder="Enter Organization Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="organization-description">Description:</label>
+                            <textarea class="form-control" id="organization-description" placeholder="Enter Description" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="location-select">Location:</label>
+                            <select class="custom-select" id="location-select" required>
+                                <option selected>Location(Choose One)</option>
+                            </select>
+                            <div class="alert alert-info">If you do not see the location you are looking for, add it <a href="locations.html">here</a>.</div>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="submit-organization">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/organizations.js"></script>
+        <script src="js/forms.js"></script>
+    </body>
+</html>

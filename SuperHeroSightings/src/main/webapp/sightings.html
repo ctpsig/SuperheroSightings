@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Sightings</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+        <style>
+            .bungeeBig {
+                font-family: 'Bungee Shade'; font-size: 73px;
+                color: red;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a class="nav-link" href="index.html"><h1 class="bungeeBig">Superhero Sightings</h1></a>
+            <div>
+                <ul class="nav nav-tabs nav-fill justify-content-center">
+                    <li class="nav-item"><a class="nav-link active" href="sightings.html">Sightings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="heroes.html">Heroes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organizations.html">Organizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                </ul>    
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-8">
+                    <h1>All Sightings</h1>
+                    <div class="row" id="all-sightings">
+
+                    </div>
+                    <div class="modal fade" id="editSightingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="editSightingTitle">Edit Sighting</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="needs-validation">
+                                        <div class="form-group">
+                                            <label for="edit-sighting-date">Date of Sighting:</label>
+                                            <input type="text" class="form-control" id="edit-sighting-date" placeholder="mm/dd/yyyy" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-sighting-location">Location:</label>
+                                            <select class="custom-select" id="edit-sighting-location" required>
+                                                <option selected value="">Location(Choose One)</option>
+                                            </select>
+                                            <div class="alert alert-info">If you do not see the location you are looking for, add it <a href="locations.html">here</a>.</div>
+                                        </div>
+                                        <label for="edit-heroes-select">Heroes Sighted: (Ctrl select all that apply)</label>
+                                        <div id="edit-heroes-selects">
+                                            <select multiple required class="form-control" id="edit-heroes-select"></select>
+                                        </div>
+                                        <div class="alert alert-info">If you do not see a hero you are looking for, add them <a href="heroes.html">here</a>.</div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-button">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h1>Add Sighting</h1>
+                    <form class="needs-validation">
+                        <div class="form-group">
+                            <label for="sighting-date">Date of Sighting:</label>
+                            <input type="text" class="form-control" id="sighting-date" placeholder="mm/dd/yyyy" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sighting-location">Location:</label>
+                            <select class="custom-select" id="sighting-location" required>
+                                <option value="" selected>Location(Choose One)</option>
+                            </select>
+                            <div class="alert alert-info">If you do not see the location you are looking for, add it <a href="locations.html">here</a>.</div>
+                        </div>
+                        <label for="heroes-select">Heroes Sighted: (Ctrl select all that apply)</label>
+                        <div id="heroes-selects">
+                            <select required multiple class="form-control" id="heroes-select"></select>
+                        </div>
+                        <div class="alert alert-info">If you do not see a hero you are looking for, add them <a href="heroes.html">here</a>.</div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary" id="submit-sighting">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/sightings.js"></script>
+        <script src="js/forms.js"></script>
+    </body>
+</html>

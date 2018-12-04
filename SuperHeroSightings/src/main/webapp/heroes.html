@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heroes</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+        <style>
+            .bungeeBig {
+                font-family: 'Bungee Shade';font-size: 73px;
+                color: red;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a class="nav-link" href="index.html"><h1 class="bungeeBig">Superhero Sightings</h1></a>
+            <div>
+                <ul class="nav nav-tabs nav-fill justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="sightings.html">Sightings</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="heroes.html">Heroes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="organizations.html">Organizations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="locations.html">Locations</a></li>
+                </ul>    
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-8">
+                    <h1>All Heroes</h1>
+                    <div id="all-heroes">
+
+                    </div>
+                    <div class="modal fade" id="editHeroesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editHeroesTitle"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="needs-validation">
+                                        <div class="form-group">
+                                            <label for="edit-hero-name">Hero Name:</label>
+                                            <input type="text" class="form-control" id="edit-hero-name" placeholder="Enter Hero Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-hero-description">Description:</label>
+                                            <textarea class="form-control" id="edit-hero-description" placeholder="Enter Description" rows="5" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="edit-hero-superpower">Superpower:</label>
+                                            <input type="text" class="form-control" id="edit-hero-superpower" placeholder="Enter Superpower" required>
+                                        </div>
+                                        <label for="edit-organizations-select">Organizations (Ctrl select all that apply):</label>
+                                        <div id="edit-organizations">
+                                            <select multiple class="form-control" id="edit-organizations-select"></select>
+                                        </div>
+                                        <input type="hidden" id="hiddenId" name="hiddenId">
+                                        <div class="alert alert-info">If you do not see a organization you are looking for, add it <a href="organizations.html">here</a>.</div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save-button">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h1>Add Heroes</h1>
+                    <form class="needs-validation">
+                        <div class="form-group">
+                            <label for="hero-name">Hero Name:</label>
+                            <input type="text" class="form-control" id="hero-name" maxlength="45" placeholder="Enter Hero Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-description">Description:</label>
+                            <textarea class="form-control" id="hero-description" maxlength="300" placeholder="Enter Description" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="hero-superpower">Superpower:</label>
+                            <input type="text" class="form-control" id="hero-superpower" maxlength="45" placeholder="Enter Superpower" required>
+                        </div>
+                        <label for="organizations-select">Organizations (Ctrl select all that apply):</label>
+                        <div id="organizations">
+                            <select multiple class="form-control" id="organizations-select"></select>
+                        </div>
+                        <div class="alert alert-info">If you do not see a organization you are looking for, add it <a href=organizations.html"">here</a>.</div>
+                        <div>
+                            <button type="button" class="btn btn-primary" id="submit-hero">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="js/heroes.js"></script>
+        <script src="js/forms.js"></script>
+    </body>
+</html>
